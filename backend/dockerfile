@@ -1,4 +1,4 @@
-# Use official base image of Java Runtim
+# Use official base image of Java Runtime
 FROM openjdk:8-jdk-alpine
 
 # Set volume point to /tmp
