@@ -87,7 +87,7 @@ services:
       - MYSQL_DATABASE=test
       - MYSQL_PASSWORD=keep1234
   frontend:
-    image: 0933237199/frotend:v1.1
+    image: 0933237199/frontend:v1
     restart: always
     depends_on:
       - backend
@@ -97,7 +97,7 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     links: 
-      - mysql:db
+      - mysql:mysql
     ports:
       - "8081:80"
     environment:
