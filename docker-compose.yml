@@ -95,12 +95,16 @@ services:
       - 4200:80
     container_name: frontend
   phpmyadmin:
+    depends_on:
+      - mysql
     image: phpmyadmin/phpmyadmin
+    restart: always
     links: 
       - mysql:mysql
     ports:
       - "8081:80"
     environment:
+        PMA_HOST: mysql
         MYSQL_USER: root
         MYSQL_ROOT_PASSWORD: keep1234
     container_name: phpmyadmin
